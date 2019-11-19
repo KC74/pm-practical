@@ -65,6 +65,7 @@ Components:
     - TextField
 2. App
 3. Layout
+4. Material UI's CircularProgress
 
 Containers:
 1. DemoForm

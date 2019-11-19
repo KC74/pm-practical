@@ -53,6 +53,22 @@ Material UI's CircularProgress component was used to provide some feedback durin
 
 The DemoFormContainer deals with all of the logic required for the form to function and passes all required props, functions, and states into our field components.
 
+## Components and Containers
+Components:
+1. Form
+  a. EmailField
+  b. NumberField
+  c. RenderField
+    1. renderInputField
+    2. renderSelectField
+  d. SelectField
+  e. TextField
+2. App
+3. Layout
+
+Containers:
+1. DemoForm
+
 ## Packages and Libraries
 
 #### Node Fetch

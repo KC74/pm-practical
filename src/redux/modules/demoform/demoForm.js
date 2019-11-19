@@ -87,7 +87,6 @@ export default (state = initialState, action) => {
             }
 
         case SUBMIT_FORM_SUCCESS:
-            console.log(action)
             return {
                 ...state,
                 values: action.values,

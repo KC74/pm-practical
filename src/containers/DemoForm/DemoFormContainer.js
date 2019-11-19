@@ -4,6 +4,7 @@ import { getOptions, submitForm } from '../../redux/modules/demoform/demoForm'
 import { connect } from 'react-redux'
 import { reduxForm, formValueSelector } from 'redux-form'
 import { CircularProgress } from '@material-ui/core'
+import config from '../../config/config'
 
 /**
  * DemoFormContainer
@@ -18,7 +19,7 @@ class DemoFormContainer extends Component {
 
     handleSubmit = () => {
         const { reason, fullName, workEmail, phone } = this.props
-        const host = 'http://b21ac366.ngrok.io/prizm-media/' // change this to the external server where the index.php lives
+        const host = config.host
         this.props.dispatch(
             submitForm(host, { reason, fullName, workEmail, phone })
         )

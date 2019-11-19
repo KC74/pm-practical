@@ -1,3 +1,3 @@
 export default {
-    host: 'localhost:8888/prizm-media',
+    host: 'http://localhost:8888/prizm-media/',
 }

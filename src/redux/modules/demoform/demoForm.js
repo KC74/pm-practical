@@ -1,5 +1,6 @@
 import options from './options'
 import fetch from 'node-fetch'
+import config from '../../../config/config'
 
 // INITIAL STATE
 const initialState = {
@@ -123,11 +124,11 @@ export const getOptions = dispatch => {
  *
  * @param {object} values - all form values
  */
-export const submitForm = (host, values) => async dispatch => {
+export const submitForm = values => async dispatch => {
     dispatch(submitFormBegin())
     try {
-        let request = await fetch(host, {
-            method: 'post',
+        let request = await fetch(config.host, {
+            method: 'POST',
             body: JSON.stringify(values),
         })
         let body = await request.json()

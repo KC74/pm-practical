@@ -31,15 +31,26 @@ Please create a MYSQL table called <b>'leads'</b> and create the following colum
 Inside of <b>src -> config -> config.js</b>
 
 Please update the host url to where the 'index.php' is on the external server.</br>
-i.e host: 'localhost:8888/prizm-media',
+i.e host: '//localhost:8888/prizm-media/',
 
 ## Run
 
 To run the app simply use
 
-### npm start
+### `npm start`
 
 Database and App will have to be configured first before running this command.
+
+### CORS and localhost
+
+In the event that you are trying to make a localhost request from the client to the server, you may run into some issues with CORs depending on the server configuration from the local machine. If the server is hosted externally then it shouldn't be a problem, but if the issue does occur it may help to add the Chrome extention "Access-Control-Allow-Origin". This extension will automatically update the response headers to allow the requests to go through.
+
+#### Steps to resolve CORS issues
+
+1. Download and install from https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+2. Whitelist "localhost"
+3. Turn on the extension by clicking on the extension button, and then clicking on the large "C" logo on the left.
+4. Ensure that there is trailing "/" at the end of the host url in the config.js file, otherwise this can potentially cause CORs to automatically redirect in the response.
 
 ## Design Decisions
 
@@ -54,13 +65,15 @@ Material UI's CircularProgress component was used to provide some feedback durin
 The DemoFormContainer deals with all of the logic required for the form to function and passes all required props, functions, and states into our field components.
 
 ## Components and Containers
+
 Components:
+
 1. Form
     - EmailField
     - NumberField
     - RenderField
-      1. renderInputField
-      2. renderSelectField
+        1. renderInputField
+        2. renderSelectField
     - SelectField
     - TextField
 2. App
@@ -68,22 +81,35 @@ Components:
 4. Material UI's CircularProgress
 
 Containers:
+
 1. DemoForm
 
 ## Packages and Libraries
 
 #### Node Fetch
-Used to make our requests.
-#### Redux and React-Redux
-Redux is used to manage our store and states, react-redux is required for React bindings.
-#### Redux Forms
-Used to manage our form fields.
-#### Material Ui
-Provides stylized presentational components.
-#### Redux Devtools Extension
-Redux chrome extension to help inspect Redux activity, this includes dispatched actions, states, and more.
-#### Redux Logger
-Console logs state change and dispatched actions.
-#### Thunk
-Used in conjunction to Redux to provide asynchronous actions.
 
+Used to make our requests.
+
+#### Redux and React-Redux
+
+Redux is used to manage our store and states, react-redux is required for React bindings.
+
+#### Redux Forms
+
+Used to manage our form fields.
+
+#### Material Ui
+
+Provides stylized presentational components.
+
+#### Redux Devtools Extension
+
+Redux chrome extension to help inspect Redux activity, this includes dispatched actions, states, and more.
+
+#### Redux Logger
+
+Console logs state change and dispatched actions.
+
+#### Thunk
+
+Used in conjunction to Redux to provide asynchronous actions.

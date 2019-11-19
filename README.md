@@ -8,6 +8,8 @@ In the project directory, first run
 
 This will load all required modules and libraries. There is no production build, so this is meant only for development and testing purposes.
 
+## Database Configuration
+
 Inside of index.php you will need to configure the following settings for your database:
 
 $server = 'localhost'
@@ -50,3 +52,4 @@ Material UI's CicularProgress component was used to provide some feedback during
 The DemoFormContainer deals with all of the logic required for the form to function and passes all required props, functions, and states into our field components.
 
 ## Packages and Libraries
+# Test

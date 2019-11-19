@@ -15,7 +15,7 @@ Inside of index.php you will need to configure the following settings for your d
 $server = 'localhost'</br>
 $username = 'yourdbusername'</br>
 $password = 'yourdbpassword'</br>
-$dbname = 'pm_practical_test'</br>
+$dbname = 'yourdbname'</br>
 
 Note: default SQL port <b>3306</b> is assumed
 

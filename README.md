@@ -7,11 +7,6 @@ In the project directory, first run
 ### `npm i`
 
 This will load all required modules and libraries. There is no production build, so this is meant only for development and testing purposes.
-<<<<<<< HEAD
-=======
-
-## Database Configuration
->>>>>>> 540088579e4fe8a097a5776a2978525a8346d23b
 
 Inside of index.php you will need to configure the following settings for your database:
 
@@ -21,6 +16,7 @@ $password = 'yourdbpassword'
 $dbname = 'pm_practical_test'
 
 Please create a MYSQL database called 'leads' and create the following columns:
+
 1. phone (int)
 2. full_name (varchar)
 3. work_email (varchar)

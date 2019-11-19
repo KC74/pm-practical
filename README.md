@@ -56,13 +56,13 @@ The DemoFormContainer deals with all of the logic required for the form to funct
 ## Components and Containers
 Components:
 1. Form
-  - EmailField
-  - NumberField
-  - RenderField
-    1. renderInputField
-    2. renderSelectField
-  - SelectField
-  - TextField
+    - EmailField
+    - NumberField
+    - RenderField
+      1. renderInputField
+      2. renderSelectField
+    - SelectField
+    - TextField
 2. App
 3. Layout
 

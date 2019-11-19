@@ -12,12 +12,12 @@ This will load all required modules and libraries. There is no production build,
 
 Inside of index.php you will need to configure the following settings for your database:
 
-$server = 'localhost'
-$username = 'yourdbusername'
-$password = 'yourdbpassword'
-$dbname = 'pm_practical_test'
+$server = 'localhost'</br>
+$username = 'yourdbusername'</br>
+$password = 'yourdbpassword'</br>
+$dbname = 'pm_practical_test'</br>
 
-Please create a MYSQL database called 'leads' and create the following columns:
+Please create a MYSQL table called <b>'leads'</b> and create the following columns:
 
 1. phone (int 25)
 2. full_name (varchar 255)
@@ -26,14 +26,14 @@ Please create a MYSQL database called 'leads' and create the following columns:
 
 ## App Configuration
 
-Inside of src -> config -> config.js
+Inside of <b>src -> config -> config.js</b>
 
-Please update the host url to where the 'index.php' is on the external server.
+Please update the host url to where the 'index.php' is on the external server.</br>
 i.e host: 'localhost:8888/prizm-media',
 
 ## Run
 
-to run the app simply use
+To run the app simply use
 
 ### npm start
 

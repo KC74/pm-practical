@@ -1,22 +1,12 @@
 import React from 'react'
 import { Field } from 'redux-form'
+import { renderInputField } from '../RenderField/RenderField'
 import '../styles.css'
 
-const TextField = ({ name, component, placeholder, isRequired, label }) => {
+const TextField = props => {
     return (
-        <div>
-            <label>
-                {label}
-                {isRequired && <span className="required-field">*</span>}
-            </label>
-            <div>
-                <Field
-                    name={name}
-                    component="input"
-                    type="text"
-                    placeholder={placeholder}
-                />
-            </div>
+        <div className="textfield container">
+            <Field component={renderInputField} type="text" {...props} />
         </div>
     )
 }

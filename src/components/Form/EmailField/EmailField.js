@@ -1,22 +1,12 @@
 import React from 'react'
 import { Field } from 'redux-form'
+import { renderInputField } from '../RenderField/RenderField'
 import '../styles.css'
 
-const EmailField = ({ label, isRequired, placeholder, name }) => {
+const EmailField = props => {
     return (
-        <div className="demoform-email">
-            <label>
-                {label}
-                {isRequired && <span className="required-field">*</span>}
-            </label>
-            <div>
-                <Field
-                    name={name}
-                    component="input"
-                    type="email"
-                    placeholder={placeholder}
-                />
-            </div>
+        <div className="emailfield container">
+            <Field component={renderInputField} type="email" {...props} />
         </div>
     )
 }

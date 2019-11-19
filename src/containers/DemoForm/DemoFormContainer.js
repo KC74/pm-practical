@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import DemoForm from './DemoForm'
-import { getOptions } from '../../redux/modules/demoform/demoForm'
+import { getOptions, submitForm } from '../../redux/modules/demoform/demoForm'
 import { connect } from 'react-redux'
 import { reduxForm, formValueSelector } from 'redux-form'
+import { CircularProgress } from '@material-ui/core'
 
 /**
  * DemoFormContainer
@@ -12,16 +13,35 @@ import { reduxForm, formValueSelector } from 'redux-form'
 class DemoFormContainer extends Component {
     componentDidMount() {
         // Fetch our form options from the dummy data
-        getOptions(this.props.dispatch)
+        this.props.dispatch(getOptions)
+    }
+
+    handleSubmit = () => {
+        const { reason, fullName, workEmail, phone } = this.props
+        const host = 'http://b21ac366.ngrok.io/prizm-media/' // change this to the external server where the index.php lives
+        this.props.dispatch(
+            submitForm(host, { reason, fullName, workEmail, phone })
+        )
     }
 
     render() {
-        const { isLoading, options } = this.props
+        const { isLoading, options, submitSuccess } = this.props
         return isLoading ? (
-            <p>Loading...</p>
+            <div>
+                <CircularProgress />
+                <p>Loading...</p>
+            </div>
         ) : (
             <div className="demoform-container">
-                <DemoForm {...this.props} options={options} />
+                {submitSuccess ? (
+                    <p>Successfully Submitted!</p>
+                ) : (
+                    <DemoForm
+                        {...this.props}
+                        handleSubmit={this.handleSubmit}
+                        options={options}
+                    />
+                )}
             </div>
         )
     }
@@ -43,7 +63,8 @@ export default connect(store => {
         'workEmail',
         'phone'
     )
-    const { isLoading, options } = store.demoFormOptions
+    const { isLoading, options, submitSuccess } = store.demoFormOptions
+    const { demoForm } = store.form
 
     return {
         isLoading,
@@ -52,5 +73,7 @@ export default connect(store => {
         fullName,
         workEmail,
         phone,
+        demoForm,
+        submitSuccess,
     }
 })(demoForm)

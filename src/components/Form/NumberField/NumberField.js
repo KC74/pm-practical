@@ -1,22 +1,12 @@
 import React from 'react'
 import { Field } from 'redux-form'
+import { renderInputField } from '../RenderField/RenderField'
 import '../styles.css'
 
-const NumberField = ({ name, placeholder, isRequired, label }) => {
+const NumberField = props => {
     return (
-        <div>
-            <label>
-                {label}
-                {isRequired && <span className="required-field">*</span>}
-            </label>
-            <div>
-                <Field
-                    name={name}
-                    component="input"
-                    type="number"
-                    placeholder={placeholder}
-                />
-            </div>
+        <div className="numberfield container">
+            <Field component={renderInputField} type="number" {...props} />
         </div>
     )
 }

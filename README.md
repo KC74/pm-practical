@@ -17,6 +17,8 @@ $username = 'yourdbusername'</br>
 $password = 'yourdbpassword'</br>
 $dbname = 'pm_practical_test'</br>
 
+Note: default SQL port <b>3306</b> is assumed
+
 Please create a MYSQL table called <b>'leads'</b> and create the following columns:
 
 1. phone (int 25)

@@ -47,9 +47,24 @@ With Redux, we can use the Containers within the container folder to connect our
 
 Each field component was seperated into their own respective concerns so that they are easily resuable, easily modified and updated, and also because each of them have their own special validations. In the event that any of these ever need to change, it is easily doable by modifying the respective field component. Inside of the Renderfield.js, are a couple render fields for input and select which are reused across all of the field components. All validation rules are also kept in another file for ease of maintainability and usage. The Layout component is the base component that contains our app.
 
-Material UI's CicularProgress component was used to provide some feedback during form submission and the loading of form options.
+Material UI's CircularProgress component was used to provide some feedback during form submission and the loading of form options.
 
 The DemoFormContainer deals with all of the logic required for the form to function and passes all required props, functions, and states into our field components.
 
 ## Packages and Libraries
-# Test
+
+#### Node Fetch
+Used to make our requests.
+#### Redux and React-Redux
+Redux is used to manage our store and states, react-redux is required for React bindings.
+#### Redux Forms
+Used to manage our form fields.
+#### Material Ui
+Provides stylized presentational components.
+#### Redux Devtools Extension
+Redux chrome extension to help inspect Redux activity, this includes dispatched actions, states, and more.
+#### Redux Logger
+Console logs state change and dispatched actions.
+#### Thunk
+Used in conjunction to Redux to provide asynchronous actions.
+
